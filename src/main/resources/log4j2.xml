@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+
+        <!-- Console Appender -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss a} [%t] %-5level %logger{36} - %msg%n" />
+        </Console>
+
+        <!-- File Appender
+        <File name="File" fileName="c:/log/app.log">
+          <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss a} [%t] %-5level %logger{36} - %msg%n" />
+        </File>-->
+
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console" />
+            <!--  <AppenderRef ref="File" /> -->
+        </Root>
+
+        <Logger name="org.project.example" level="debug" additivity="false">
+            <AppenderRef ref="Console" />
+            <!--  <AppenderRef ref="File" /> -->
+        </Logger>
+
+        <Logger name="spark" level="debug" additivity="false">
+            <AppenderRef ref="Console" />
+            <!--  <AppenderRef ref="File" /> -->
+        </Logger>
+
+    </Loggers>
+</Configuration>
