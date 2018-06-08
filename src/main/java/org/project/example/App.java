@@ -1,9 +1,15 @@
 package org.project.example;
 
+import com.mongodb.MongoClient;
+import com.mongodb.MongoClientOptions;
+import com.mongodb.ServerAddress;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import freemarker.template.TemplateExceptionHandler;
+import org.bson.Document;
 
 import java.io.IOException;
 import java.io.StringWriter;
@@ -17,6 +23,7 @@ import static spark.Spark.*;
  */
 public class App {
     public static void main(String[] args) {
+
         Configuration cfg = new Configuration(Configuration.VERSION_2_3_28);
         cfg.setClassForTemplateLoading(App.class,"/");
 
